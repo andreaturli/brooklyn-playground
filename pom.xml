@@ -13,13 +13,13 @@
     </properties>
 
     <scm>
-        <connection>scm:git:<<your-git-repo-url>></connection>
+        <connection>scm:git@github.com:andreaturli/brooklyn-playground.git</connection>
     </scm>
 
     <distributionManagement>
         <repository>
             <id>artifact-repository</id>
-            <url><<your-artifact-repo-url>></url>
+            <url>TODO</url>
         </repository>
     </distributionManagement>
 
