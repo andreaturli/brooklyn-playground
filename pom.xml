@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.brooklyn</groupId>
+    <artifactId>brooklyn-playground</artifactId>
+    <packaging>jar</packaging>
+    <version>0.1.0-SNAPSHOT</version>
+    <name>brooklyn-playground</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <brooklyn.version>0.7.0-SNAPSHOT</brooklyn.version>
+    </properties>
+
+    <scm>
+        <connection>scm:git:<<your-git-repo-url>></connection>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>artifact-repository</id>
+            <url><<your-artifact-repo-url>></url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.brooklyn</groupId>
+            <artifactId>brooklyn-all</artifactId>
+            <version>${brooklyn.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.brooklyn</groupId>
+            <artifactId>brooklyn-logback-xml</artifactId>
+            <version>${brooklyn.version}</version>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>io.brooklyn</groupId>
+            <artifactId>brooklyn-test-support</artifactId>
+            <version>${brooklyn.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
