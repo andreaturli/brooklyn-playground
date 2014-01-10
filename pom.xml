@@ -4,7 +4,7 @@
     <groupId>io.brooklyn</groupId>
     <artifactId>brooklyn-playground</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <name>brooklyn-playground</name>
     <url>http://maven.apache.org</url>
 
@@ -15,13 +15,13 @@
     </properties>
 
     <scm>
-        <connection>scm:git@github.com:andreaturli/brooklyn-playground.git</connection>
+        <connection>scm:git:git@github.com:andreaturli/brooklyn-playground.git</connection>
     </scm>
 
     <distributionManagement>
         <repository>
-            <id>artifact-repository</id>
-            <url>TODO</url>
+            <id>snapshots</id>
+            <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
         </repository>
     </distributionManagement>
 
@@ -66,5 +66,22 @@
             </snapshots>
         </repository>
     </repositories>
-    
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.1</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>1.8.1</version>
+                <configuration>
+                    <tag>${project.artifactId}-${project.version}</tag>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
